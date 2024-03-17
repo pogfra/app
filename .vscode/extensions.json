@@ -1,0 +1,18 @@
+{
+    "recommendations": [
+        "esbenp.prettier-vscode",
+        "richie5um2.vscode-sort-json",
+        "andrewdavidblum.drupal-smart-snippets",
+        "mblode.twig-language-2",
+        "tsega.drupal-8-twig-snippets",
+        "formulahendry.auto-close-tag",
+        "formulahendry.auto-complete-tag",
+        "formulahendry.auto-rename-tag",
+        "marcostazi.vs-code-drupal",
+        "dbaeumer.vscode-eslint",
+        "mhutchie.git-graph",
+        "oderwat.indent-rainbow",
+        "mehedidracula.php-namespace-resolver",
+        "stylelint.vscode-stylelint"
+    ]
+}

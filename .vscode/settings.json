@@ -1,0 +1,57 @@
+{
+    // Editor
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.rulers": [80],
+
+    "search.useIgnoreFiles": false,
+
+    "files.associations": {
+        "*.inc": "php",
+        "*.module": "php",
+        "*.install": "php",
+        "*.theme": "php",
+        "*.profile": "php",
+        "*.tpl.php": "php",
+        "*.test": "php",
+        "*.php": "php",
+        "*.info": "ini",
+        "*.html": "twig",
+        "*.html.twig": "twig"
+    },
+
+    "files.exclude": {
+        ".env": false
+    },
+
+    // PHP
+    // "php.executablePath": "/usr/local/bin/php",
+    // "php.executablePath": "/Applications/MAMP/bin/php/php8.1.13/bin/php",
+    "php.validate.enable": true,
+    // "php.validate.executablePath": "/usr/local/bin/php",
+    // "php.validate.executablePath": "/Applications/MAMP/bin/php/php8.1.13/bin/php",
+    "php.validate.run": "onType",
+    "php.suggest.basic": false,
+
+    "emmet.includeLanguages": {
+        "twig": "html",
+        "php": "html"
+    },
+
+    // scss lint
+    "scss.validate": false,
+    "stylelint.validate": ["scss"],
+    // js lint
+    "eslint.lintTask.enable": true,
+    "eslint.format.enable": true,
+
+    // scss/js fix
+    "editor.codeActionsOnSave": {
+        "source.fixAll.stylelint": "explicit",
+        "source.fixAll.eslint": "explicit"
+    },
+    "php-intellisense.trace.server": "messages",
+    "[twig]": {
+        "editor.defaultFormatter": "mblode.twig-language-2"
+    }
+}
