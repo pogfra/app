@@ -1,8 +1,7 @@
 services:
   app:
     container_name: app-$PROJECT
-    #build: .
-    image: pogfra/php
+    build: .
     restart: unless-stopped
     env_file: .env
     networks:
