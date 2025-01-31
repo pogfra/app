@@ -33,7 +33,6 @@ RUN set -eux \
     poppler-utils \
     less \
     wget \
-    sendmail \
     openssh-server \
     mariadb-client \
     rsync \
@@ -68,7 +67,6 @@ RUN curl -sL "https://deb.nodesource.com/setup_$VERSION_NODE.x" -o nodesource_se
 
 # APACHE
 COPY entrypoint.sh /
-COPY sendmail.sh /
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf \
     && echo "\nmemory_limit = 512M\nerror_reporting = E_ALL\nlog_errors = On" > /usr/local/etc/php/conf.d/app.ini \
     && echo "\nsendmail_path=/usr/sbin/sendmail -t -i\n" >> /usr/local/etc/php/conf.d/app.ini \
@@ -78,7 +76,6 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf \
     && a2enmod headers \
     && a2enmod expires \
     && chmod +x /entrypoint.sh \
-    && chmod +x /sendmail.sh
 
 # installation de deno
 COPY --from=denoland/deno /usr/bin/deno /usr/local/bin/
