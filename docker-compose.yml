@@ -1,0 +1,25 @@
+services:
+  app:
+    container_name: app-$PROJECT
+    image: pogfra/app:8.3
+    #build: .
+    restart: unless-stopped
+    env_file: .env
+    networks:
+      - dev
+    volumes:
+      - .:/var/www/dev/$PROJECT
+      - ~/.ssh:/home/www-data/.ssh
+    working_dir: /var/www/dev/$PROJECT
+    hostname: $PROJECT.$DOMAIN
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.$PROJECT.rule=Host(`$PROJECT.$DOMAIN`)"
+      - "traefik.http.routers.$PROJECT.entrypoints=https"
+      - "traefik.http.routers.$PROJECT.tls=true"
+
+networks:
+  dev:
+    external: true
